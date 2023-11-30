@@ -16,7 +16,12 @@ public class Empresa {
     }
 
     public double faturamento() {
-        throw new UnsupportedOperationException("The method is not implemented yet.");
+        double faturamento = 0.0;
+        for (Funcionario funcionario : funcionarios.values()) {
+            faturamento -= funcionario.calcSalFinal() * 12.0;
+        }
+
+        return faturamento;
     }
 
 }

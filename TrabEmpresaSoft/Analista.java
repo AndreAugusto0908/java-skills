@@ -1,24 +1,26 @@
-
-
 public abstract class Analista extends Funcionario {
 
 	protected int horasExtras;
-	private CLT clt;
+	protected CLT clt;
+	protected ImpostoDeRenda imposto;
 
 	public Analista(String nome, String CPF){
 		super(nome, CPF);
+		this.horasExtras = 0;
 	}
 
 	public double calcValHorasExtras() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		double valorHoras = horasExtras * (calcSalFinal() * 0.10);
+		return valorHoras;
 	}
 
+	@Override
 	public double calcSalFinal() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		return salarioBase.getValor();
 	}
 
 	public void addHorasExtras(int quant) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		horasExtras += quant;
 	}
 
 }

@@ -1,17 +1,13 @@
 
 public class ImpostoDeRenda {
 
-	private Funcionario funcionario;
+	public ImpostoDeRenda(){}
 
-	public ImpostoDeRenda(Funcionario funcionario){
-		this.funcionario = funcionario;
-	}
-
-	private boolean FuncPagImpos() {
+	private boolean FuncPagImpos(Funcionario funcionario) {
 		throw new UnsupportedOperationException("The method is not implemented yet.");
 	}
 
-	public double valorImpost() {
+	public double valorImpost(Funcionario funcionario) {
 		throw new UnsupportedOperationException("The method is not implemented yet.");
 	}
 
