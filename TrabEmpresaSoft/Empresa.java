@@ -15,13 +15,23 @@ public class Empresa {
         this.funcionarios.put(funcionario.getCPF(), funcionario);
     }
 
+    private void calcBonusGer(){
+        for (Funcionario funcionario : funcionarios.values()) {
+            if (funcionario instanceof Diretor) {
+                Diretor diretor = (Diretor) funcionario;
+                diretor.calcBonus(faturamento());
+            }
+        }
+    }
+
     public double faturamento() {
         double faturamento = 0.0;
         for (Funcionario funcionario : funcionarios.values()) {
             faturamento -= funcionario.calcSalFinal() * 12.0;
         }
-
+        calcBonusGer();     
         return faturamento;
     }
-
+    
 }
+

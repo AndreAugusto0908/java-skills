@@ -1,17 +1,27 @@
 
 
 public class Gerente extends Funcionario {
-
-	private Salarios SALARIO_GER;
+;
 	private int quantProjetos;
 
-	public Gerente(String nome, String CPF, Salarios SALARIO_GER){
+	public Gerente(String nome, String CPF){
 		super(nome, CPF);
-		this.SALARIO_GER = SALARIO_GER;
+		this.salarioBase = Salarios.SALARIO_GER;
+		this.quantProjetos = 0;
 	}
 
+	public int addProjetos(int projeto){
+		quantProjetos += projeto;
+		return quantProjetos;
+	}
+
+	private double valorProjeto(){
+		return 400.00 * quantProjetos;
+	}
+
+	@Override
 	public double calcSalFinal() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		return salarioBase.getValor() + valorProjeto();
 	}
 
 }

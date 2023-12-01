@@ -18,7 +18,7 @@ public class Junior extends Analista {
 	
 	@Override
 	public double calcSalFinal() {
-		double salario = salarioBase.getValor() - imposto.valorImpost(this);
+		double salario = salarioBase.getValor() + calcValHorasExtras() - imposto.valorImpost(this);
 		return salario;
 	}
 
