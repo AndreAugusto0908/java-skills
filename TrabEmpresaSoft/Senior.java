@@ -9,6 +9,8 @@ public class Senior extends Analista {
 		this.salarioBase = Salarios.SALARIO_SR;
 	}
 
+	
+
 	@Override
 	public double calcValHorasExtras() {
 		double valorHoras = horasExtras * (salarioBase.getValor() * 0.10);
