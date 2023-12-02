@@ -12,6 +12,7 @@ public abstract class Funcionario {
 	public Funcionario(String nome, String CPF){
 		this.nome = nome;
 		this.CPF = CPF;
+		Salarios.inicializarValores();
 		this.salarioBase = Salarios.SALARIO_BASE;
 		this.dataAdmissao = LocalDate.now();
 	}

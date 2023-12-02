@@ -3,12 +3,32 @@ public class ImpostoDeRenda {
 
 	public ImpostoDeRenda(){}
 
-	private boolean FuncPagImpos(Funcionario funcionario) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
-	}
+
 
 	public double valorImpost(Funcionario funcionario) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		double imposto = 0;
+
+		if(funcionario.salarioBase.getValor() < 1903){
+			imposto = 0;
+		}
+		
+		if(funcionario.salarioBase.getValor() > 1903 && funcionario.salarioBase.getValor() <= 2825){
+			imposto = funcionario.salarioBase.getValor() * 0.075;
+		}
+
+		if(funcionario.salarioBase.getValor() > 2825 && funcionario.salarioBase.getValor() <= 3750){
+			imposto = funcionario.salarioBase.getValor() * 0.15;
+		}
+
+		if(funcionario.salarioBase.getValor() > 3750 && funcionario.salarioBase.getValor() <= 4663){
+			imposto = funcionario.salarioBase.getValor() * 0.22;
+		}
+
+		if(funcionario.salarioBase.getValor() > 4663){
+			imposto = funcionario.salarioBase.getValor() * 0.0275;
+		}
+
+		return imposto;
 	}
 
 }

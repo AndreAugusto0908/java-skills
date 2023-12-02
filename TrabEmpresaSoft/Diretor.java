@@ -10,9 +10,9 @@ public class Diretor extends Funcionario {
 		this.bonus = 0;
 	}
 
-	public double calcBonus(double faturamento) {
+	public double calcBonus(Empresa empresa) {
 		bonus = 0;
-		bonus = 0.3 * faturamento;
+		bonus = 0.3 * empresa.faturamento();
 		return bonus;
 	}
 
