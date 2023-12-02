@@ -2,6 +2,7 @@
 
 public class Diretor extends Funcionario {
 
+	private ImpostoDeRenda imposto = new ImpostoDeRenda();
 	private double bonus;
 
 	public Diretor(String nome, String CPF){
@@ -18,7 +19,7 @@ public class Diretor extends Funcionario {
 
 	@Override	
 	public double calcSalFinal() {
-		return salarioBase.getValor() + bonus;
+		return (salarioBase.getValor() + bonus) - imposto.valorImpost(this);
 	}
 
 }

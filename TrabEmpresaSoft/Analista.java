@@ -1,7 +1,7 @@
 public abstract class Analista extends Funcionario {
 
 	protected int horasExtras;
-	protected CLT clt;
+	protected CLT clt = new CLT();
 	protected ImpostoDeRenda imposto = new ImpostoDeRenda();
 
 	public Analista(String nome, String CPF){
@@ -13,6 +13,10 @@ public abstract class Analista extends Funcionario {
 	public double calcValHorasExtras() {
 		double valorHoras = horasExtras * (calcSalFinal() * 0.10);
 		return valorHoras;
+	}
+
+	public double calcSalarioAnual(){
+		return ((salarioBase.getValor() - imposto.valorImpost(this)) * 12) + clt.calcDecimoTerc(this) + clt.calcFerias(this);
 	}
 
 	@Override

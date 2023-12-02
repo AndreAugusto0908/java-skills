@@ -29,8 +29,26 @@ public class Empresa {
         for (Funcionario funcionario : funcionarios.values()) {
             faturamento -= funcionario.calcSalFinal() * 12.0;
         }
-        calcBonusGer();     
+        calcBonusGer();
         return faturamento;
+    }
+
+    public String salarioAnualAnalista() {
+        StringBuilder relatorio = new StringBuilder();
+        for (Funcionario funcionario : funcionarios.values()) {
+            if (funcionario instanceof Junior) {
+                Junior junior = (Junior) funcionario;
+                relatorio.append("Salario Anual de um Analista Junior: ").append(String.format("%.2f", junior.calcSalarioAnual()))
+                        .append("\n");
+            }
+
+            if (funcionario instanceof Senior) {
+                Senior senior = (Senior) funcionario;
+                relatorio.append("Salario Anual de um Analista Senior: ").append(String.format("%.2f", senior.calcSalarioAnual()))
+                        .append("\n");
+            }
+        }
+        return relatorio.toString();
     }
 
     @Override
@@ -38,13 +56,13 @@ public class Empresa {
         StringBuilder dados = new StringBuilder();
         dados.append("============ ").append(nome.toUpperCase()).append(" ============\n");
         dados.append(String.format("%-20s%-10s%-15s\n", "CPF", "NOME", "SALÁRIO FINAL"));
-    
+
         for (Funcionario funcionario : funcionarios.values()) {
-            dados.append(String.format("%-20s%-10s%-15.2f\n", funcionario.getCPF(), funcionario.nome, funcionario.calcSalFinal()));
+            dados.append(String.format("%-20s%-10s%-15.2f\n", funcionario.getCPF(), funcionario.nome,
+                    funcionario.calcSalFinal()));
         }
-    
+
         return dados.toString();
     }
-    
-}
 
+}

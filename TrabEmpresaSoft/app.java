@@ -23,7 +23,7 @@ public class app {
                     exibirMenu(software);
                     break;
                 case 2:
-                    mostrarRelatorios(software);
+                    mostrarRelatorios(software, teclado);
                     break;
                 case 3:
                     System.out.println("Encerrando o programa...");
@@ -103,9 +103,34 @@ public class app {
             System.out.println("Funcionário do tipo Analista Senior adicionado!");
         }
 
-        public static void mostrarRelatorios(Empresa software) {
-            System.out.println("Relatórios:");
-            System.out.println(software); 
+        public static void mostrarRelatorios(Empresa software, Scanner teclado) {
+            int opcao;
+            do {
+                System.out.println("Menu de Relatórios:");
+                System.out.println("1. Relatório de Funcionários");
+                System.out.println("2. Salário anual dos Analistas");
+                System.out.println("3. Retornar ao Menu Principal");
+                System.out.print("Escolha uma opção: ");
+    
+                opcao = teclado.nextInt();
+                teclado.nextLine();
+    
+                switch (opcao) {
+                    case 1:
+                        System.out.println("Relatório de Funcionários:");
+                        System.out.println(software);
+                        break;
+                    case 2:
+                        System.out.println(software.salarioAnualAnalista());
+                        break;
+                    case 3:
+                        System.out.println("Retornando ao Menu Principal...");
+                        return;
+                    default:
+                        System.out.println("Opção inválida! Tente novamente.");
+                        break;
+                }
+            } while (opcao != 4);
         }
     
 }
