@@ -16,8 +16,12 @@ public enum Salarios {
         this.valor = novoValor;
     }
 
+    /**
+     * Inicializa os valores dos salários, definindo o salário de Senior como 30% a
+     * mais que o salário de Junior.
+     */
     public static void inicializarValores() {
-        SALARIO_SR.setValor(SALARIO_JR.getValor() + (SALARIO_JR.getValor() * 0.03));
+        SALARIO_SR.setValor(SALARIO_JR.getValor() + (SALARIO_JR.getValor() * 0.30));
     }
 
     public double getValor() {
