@@ -2,11 +2,23 @@
 
 public class Senior extends Analista {
 
-	private Salarios SALARIO_SR;
+	
 
-	public Senior(String nome, String CPF, Salarios SALARIO_SR){
+	public Senior(String nome, String CPF){
 		super(nome, CPF);
-		this.SALARIO_SR = SALARIO_SR;
+		this.salarioBase = Salarios.SALARIO_SR;
+	}
+
+	@Override
+	public double calcValHorasExtras() {
+		double valorHoras = horasExtras * (salarioBase.getValor() * 0.10);
+		return valorHoras;
+	}
+	
+	@Override
+	public double calcSalFinal() {
+		double salario = salarioBase.getValor() - imposto.valorImpost(this);
+		return salario;
 	}
 
 }

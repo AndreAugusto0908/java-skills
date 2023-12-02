@@ -2,15 +2,23 @@
 
 public class Diretor extends Funcionario {
 
-	private Salarios PRO_LABORE;
+	private double bonus;
 
-	public Diretor(String nome, String CPF, Salarios PRO_LABORE){
+	public Diretor(String nome, String CPF){
 		super(nome, CPF);
-		this.PRO_LABORE = PRO_LABORE;
+		this.salarioBase = Salarios.PRO_LABORE;
+		this.bonus = 0;
 	}
 
-	public double calcBonus() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+	public double calcBonus(Empresa empresa) {
+		bonus = 0;
+		bonus = 0.3 * empresa.faturamento();
+		return bonus;
+	}
+
+	@Override	
+	public double calcSalFinal() {
+		return salarioBase.getValor() + bonus;
 	}
 
 }

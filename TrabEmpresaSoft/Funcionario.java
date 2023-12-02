@@ -12,6 +12,8 @@ public abstract class Funcionario {
 	public Funcionario(String nome, String CPF){
 		this.nome = nome;
 		this.CPF = CPF;
+		Salarios.inicializarValores();
+		this.salarioBase = Salarios.SALARIO_BASE;
 		this.dataAdmissao = LocalDate.now();
 	}
 
@@ -20,7 +22,7 @@ public abstract class Funcionario {
 	}
 
 	public double calcSalFinal() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		return salarioBase.getValor();
 	}
 
 }
