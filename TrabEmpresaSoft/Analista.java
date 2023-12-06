@@ -18,7 +18,7 @@ public abstract class Analista extends Funcionario {
 	 * @return O valor das horas extras calculado.
 	 */
 	public double calcValHorasExtras() {
-		double valorHoras = horasExtras * (calcSalFinal() * 0.10);
+		double valorHoras = horasExtras * (salarioBase.getValor() * 0.10);
 		return valorHoras;
 	}
 
@@ -29,7 +29,7 @@ public abstract class Analista extends Funcionario {
 	 * @return O valor do salário anual calculado.
 	 */
 	public double calcSalarioAnual() {
-		return ((calcSalFinal() - imposto.valorImpost(this)) * 12) + clt.calcDecimoTerc(this) + clt.calcFerias(this);
+		return (calcSalFinal() * 12) + clt.calcDecimoTerc(this) + clt.calcFerias(this);
 	}
 
 	/**
@@ -39,7 +39,8 @@ public abstract class Analista extends Funcionario {
 	 */
 	@Override
 	public double calcSalFinal() {
-		return salarioBase.getValor();
+		double salario = salarioBase.getValor() + calcValHorasExtras() - imposto.valorImpost(this);
+		return salario;
 	}
 
 	/**
