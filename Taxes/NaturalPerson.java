@@ -17,7 +17,10 @@ public class NaturalPerson extends People{
         }
 
         if(healthExpenditure > 0){
-            taxation = taxation * 0.5;
+            taxation =  taxation - (healthExpenditure * 0.5);
+        }
+        if (taxation < 0){
+            taxation = 0;
         }
 
         return taxation;

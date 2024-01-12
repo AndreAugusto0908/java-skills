@@ -36,8 +36,8 @@ public class App {
 
         System.out.println("=============================================================== ");
 
-        for(int i = 0; i < peoples.size(); i++){
-            System.out.println(peoples) ;
+        for(People tp : peoples){
+            System.out.println(tp) ;
         }
 
         sc.close();
