@@ -7,7 +7,7 @@ public class NaturalPerson extends People {
     private double healthExpenditure;
 
     /**
-     * Constructor for creating a NaturalPerson object.
+     * Constructor for creating a NaturalPerson object
      * 
      * @param name              The name of the natural person.
      * @param annualIncome      The annual income of the natural person.
