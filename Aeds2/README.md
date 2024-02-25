@@ -1,18 +1,9 @@
-## Getting Started
+## AEDS2
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Sobre este repositório
 
-## Folder Structure
+Este repositório foi criado como parte do meu aprendizado e prática em algoritmos e estruturas de dados utilizando a linguagem de programação Java. Aqui, você encontrará uma coleção de exercícios resolvidos e trabalhos práticos relacionados à disciplina AEDS 2.
 
-The workspace contains two folders by default, where:
+## Organização do Repositório
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+    Exercícios: Este diretório contém uma variedade de exercícios resolvidos em Java, abordando tópicos como estruturas de dados, algoritmos de ordenação, busca, grafos, entre outros.
