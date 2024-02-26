@@ -1,4 +1,4 @@
-package application;
+package Projeto1Set.application;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,9 +6,10 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-import java.time.Instant;
 
-import Entities.Users;
+import Projeto1Set.Entities.Users;
+
+import java.time.Instant;
 
 public class App {
 
