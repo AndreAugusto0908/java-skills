@@ -1,4 +1,4 @@
-package Entities;
+package Projeto1Set.Entities;
 
 import java.util.Date;
 import java.util.Objects;
