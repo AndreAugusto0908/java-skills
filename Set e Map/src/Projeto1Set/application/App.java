@@ -14,7 +14,7 @@ import java.time.Instant;
 public class App {
 
     public static void main(String[] args) {
-        String path = "D:\\André\\Programação modular\\java-skills\\Website\\src\\application\\in.txt";
+        String path = "D:\\André\\Programação modular\\java-skills\\Set e Map\\src\\Projeto1Map\\Application\\in.txt";
         Set<Users> set = new HashSet<>();
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 
