@@ -9,8 +9,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
-import com.mysql.cj.protocol.Resultset;
-
 public class Db {
 
     private static Connection conn = null;
