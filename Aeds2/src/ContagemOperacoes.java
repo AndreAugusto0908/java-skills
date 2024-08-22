@@ -27,8 +27,7 @@ public class ContagemOperacoes {
 builder.append("Tempo de execução: ")
         .append("Microssegundos: ").append(micros)
         .append(", Nanossegundos: ").append(nanos)
-        .append(", Picossegundos: ").append(picos)
-        .append(",\nNumero de operações = ").append(cont);
+        .append(", Picossegundos: ").append(picos);
 
     return builder.toString();
 }
